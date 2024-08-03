@@ -1,0 +1,70 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000268740ebcb0 .scope module, "fulladd1test" "fulladd1test" 2 2;
+ .timescale 0 0;
+v00000268741027c0_0 .var "a", 0 0;
+v0000026874102860_0 .var "b", 0 0;
+v0000026874102900_0 .var "cin", 0 0;
+v00000268741029a0_0 .net "cout", 0 0, L_0000026874133f60;  1 drivers
+v000002687417b610_0 .net "s", 0 0, L_0000026874136df0;  1 drivers
+S_00000268740ebe40 .scope module, "fa1" "fulladd1" 2 7, 3 1 0, S_00000268740ebcb0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s";
+    .port_info 1 /OUTPUT 1 "cout";
+    .port_info 2 /INPUT 1 "a";
+    .port_info 3 /INPUT 1 "b";
+    .port_info 4 /INPUT 1 "cin";
+L_00000268740e9b30 .functor XOR 1, v00000268741027c0_0, v0000026874102860_0, C4<0>, C4<0>;
+L_0000026874136df0 .functor XOR 1, L_00000268740e9b30, v0000026874102900_0, C4<0>, C4<0>;
+L_00000268741031e0 .functor AND 1, v00000268741027c0_0, v0000026874102860_0, C4<1>, C4<1>;
+L_0000026874133ef0 .functor AND 1, v0000026874102900_0, L_00000268740e9b30, C4<1>, C4<1>;
+L_0000026874133f60 .functor OR 1, L_0000026874133ef0, L_00000268741031e0, C4<0>, C4<0>;
+v0000026874102da0_0 .net "a", 0 0, v00000268741027c0_0;  1 drivers
+v00000268740e9a90_0 .net "a1", 0 0, L_00000268741031e0;  1 drivers
+v0000026874125c20_0 .net "a2", 0 0, L_0000026874133ef0;  1 drivers
+v0000026874125cc0_0 .net "b", 0 0, v0000026874102860_0;  1 drivers
+v0000026874125d60_0 .net "cin", 0 0, v0000026874102900_0;  1 drivers
+v0000026874125e00_0 .net "cout", 0 0, L_0000026874133f60;  alias, 1 drivers
+v0000026874125ea0_0 .net "s", 0 0, L_0000026874136df0;  alias, 1 drivers
+v0000026874102720_0 .net "s1", 0 0, L_00000268740e9b30;  1 drivers
+    .scope S_00000268740ebcb0;
+T_0 ;
+    %vpi_call 2 11 "$monitor", " ", $time, "s=%b cout=%b a=%b b=%b cin=%b", v000002687417b610_0, v00000268741029a0_0, v00000268741027c0_0, v0000026874102860_0, v0000026874102900_0 {0 0 0};
+    %delay 0, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000268741027c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026874102860_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026874102900_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000268741027c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026874102860_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026874102900_0, 0, 1;
+    %delay 4, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000268741027c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026874102860_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026874102900_0, 0, 1;
+    %delay 6, 0;
+    %vpi_call 2 15 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "hwq1_atest.v";
+    "./hwq1_a_g.v";

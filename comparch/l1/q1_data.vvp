@@ -1,0 +1,42 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000020f4d402720 .scope module, "bcdtogrey4_df" "bcdtogrey4_df" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 4 "grey";
+    .port_info 1 /INPUT 4 "bcd";
+L_0000020f4d434a10 .functor XOR 1, L_0000020f4d4323e0, L_0000020f4d431bc0, C4<0>, C4<0>;
+L_0000020f4d37ed30 .functor XOR 1, L_0000020f4d432520, L_0000020f4d431b20, C4<0>, C4<0>;
+L_0000020f4d37eda0 .functor XOR 1, L_0000020f4d432480, L_0000020f4d431ee0, C4<0>, C4<0>;
+v0000020f4d402ef0_0 .net *"_ivl_10", 0 0, L_0000020f4d434a10;  1 drivers
+v0000020f4d4028b0_0 .net *"_ivl_15", 0 0, L_0000020f4d432520;  1 drivers
+v0000020f4d402950_0 .net *"_ivl_17", 0 0, L_0000020f4d431b20;  1 drivers
+v0000020f4d4029f0_0 .net *"_ivl_18", 0 0, L_0000020f4d37ed30;  1 drivers
+v0000020f4d402a90_0 .net *"_ivl_24", 0 0, L_0000020f4d432480;  1 drivers
+v0000020f4d37e840_0 .net *"_ivl_26", 0 0, L_0000020f4d431ee0;  1 drivers
+v0000020f4d37e8e0_0 .net *"_ivl_27", 0 0, L_0000020f4d37eda0;  1 drivers
+v0000020f4d37e980_0 .net *"_ivl_3", 0 0, L_0000020f4d432700;  1 drivers
+v0000020f4d37ea20_0 .net *"_ivl_7", 0 0, L_0000020f4d4323e0;  1 drivers
+v0000020f4d37eac0_0 .net *"_ivl_9", 0 0, L_0000020f4d431bc0;  1 drivers
+o0000020f4d4371b8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0000020f4d37eb60_0 .net "bcd", 3 0, o0000020f4d4371b8;  0 drivers
+v0000020f4d37ec00_0 .net "grey", 3 0, L_0000020f4d4327a0;  1 drivers
+L_0000020f4d432700 .part o0000020f4d4371b8, 0, 1;
+L_0000020f4d4323e0 .part o0000020f4d4371b8, 0, 1;
+L_0000020f4d431bc0 .part o0000020f4d4371b8, 1, 1;
+L_0000020f4d432520 .part o0000020f4d4371b8, 1, 1;
+L_0000020f4d431b20 .part o0000020f4d4371b8, 2, 1;
+L_0000020f4d4327a0 .concat8 [ 1 1 1 1], L_0000020f4d432700, L_0000020f4d434a10, L_0000020f4d37ed30, L_0000020f4d37eda0;
+L_0000020f4d432480 .part o0000020f4d4371b8, 2, 1;
+L_0000020f4d431ee0 .part o0000020f4d4371b8, 3, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "q1_df.v";

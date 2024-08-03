@@ -1,0 +1,78 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000295759ee290 .scope module, "fadder" "fadder" 2 2;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s";
+    .port_info 1 /OUTPUT 1 "cout";
+    .port_info 2 /INPUT 1 "x";
+    .port_info 3 /INPUT 1 "y";
+    .port_info 4 /INPUT 1 "z";
+L_0000029575923df0 .functor OR 1, L_0000029575976860, L_00000295759768d0, L_0000029575976b60, L_0000029575923d80;
+L_0000029575923e60 .functor OR 1, L_00000295759769d0, L_0000029575923ca0, L_0000029575923d10, L_0000029575923d80;
+v00000295759765c0_0 .net "cout", 0 0, L_0000029575923e60;  1 drivers
+v0000029575975940_0 .net "d0", 0 0, L_00000295758f2ca0;  1 drivers
+v0000029575976340_0 .net "d1", 0 0, L_0000029575976860;  1 drivers
+v00000295759759e0_0 .net "d2", 0 0, L_00000295759768d0;  1 drivers
+v0000029575976020_0 .net "d3", 0 0, L_00000295759769d0;  1 drivers
+v0000029575976480_0 .net "d4", 0 0, L_0000029575976b60;  1 drivers
+v0000029575975a80_0 .net "d5", 0 0, L_0000029575923ca0;  1 drivers
+v0000029575975b20_0 .net "d6", 0 0, L_0000029575923d10;  1 drivers
+v0000029575975c60_0 .net "d7", 0 0, L_0000029575923d80;  1 drivers
+v00000295759760c0_0 .net "s", 0 0, L_0000029575923df0;  1 drivers
+o000002957592b158 .functor BUFZ 1, C4<z>; HiZ drive
+v0000029575976160_0 .net "x", 0 0, o000002957592b158;  0 drivers
+o000002957592b1b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0000029575976520_0 .net "y", 0 0, o000002957592b1b8;  0 drivers
+o000002957592b218 .functor BUFZ 1, C4<z>; HiZ drive
+v0000029575976200_0 .net "z", 0 0, o000002957592b218;  0 drivers
+S_00000295759ee420 .scope module, "de1" "decoder" 2 7, 3 1 0, S_00000295759ee290;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "d0";
+    .port_info 1 /OUTPUT 1 "d1";
+    .port_info 2 /OUTPUT 1 "d2";
+    .port_info 3 /OUTPUT 1 "d3";
+    .port_info 4 /OUTPUT 1 "d4";
+    .port_info 5 /OUTPUT 1 "d5";
+    .port_info 6 /OUTPUT 1 "d6";
+    .port_info 7 /OUTPUT 1 "d7";
+    .port_info 8 /INPUT 1 "x";
+    .port_info 9 /INPUT 1 "y";
+    .port_info 10 /INPUT 1 "z";
+L_00000295758f3110 .functor NOT 1, o000002957592b158, C4<0>, C4<0>, C4<0>;
+L_00000295758f3310 .functor NOT 1, o000002957592b1b8, C4<0>, C4<0>, C4<0>;
+L_00000295758f2c30 .functor NOT 1, o000002957592b218, C4<0>, C4<0>, C4<0>;
+L_00000295758f2ca0 .functor AND 1, L_00000295758f3110, L_00000295758f3310, L_00000295758f2c30, C4<1>;
+L_0000029575976860 .functor AND 1, L_00000295758f3110, L_00000295758f3310, o000002957592b218, C4<1>;
+L_00000295759768d0 .functor AND 1, L_00000295758f3110, L_00000295758f2c30, o000002957592b1b8, C4<1>;
+L_00000295759769d0 .functor AND 1, L_00000295758f3110, o000002957592b218, o000002957592b1b8, C4<1>;
+L_0000029575976b60 .functor AND 1, L_00000295758f3310, L_00000295758f2c30, o000002957592b158, C4<1>;
+L_0000029575923ca0 .functor AND 1, L_00000295758f3310, o000002957592b218, o000002957592b158, C4<1>;
+L_0000029575923d10 .functor AND 1, L_00000295758f2c30, o000002957592b1b8, o000002957592b158, C4<1>;
+L_0000029575923d80 .functor AND 1, o000002957592b158, o000002957592b1b8, o000002957592b218, C4<1>;
+v00000295758f2ed0_0 .net "d0", 0 0, L_00000295758f2ca0;  alias, 1 drivers
+v00000295758f2930_0 .net "d1", 0 0, L_0000029575976860;  alias, 1 drivers
+v00000295758f29d0_0 .net "d2", 0 0, L_00000295759768d0;  alias, 1 drivers
+v00000295758f2a70_0 .net "d3", 0 0, L_00000295759769d0;  alias, 1 drivers
+v0000029575975e40_0 .net "d4", 0 0, L_0000029575976b60;  alias, 1 drivers
+v00000295759763e0_0 .net "d5", 0 0, L_0000029575923ca0;  alias, 1 drivers
+v0000029575975bc0_0 .net "d6", 0 0, L_0000029575923d10;  alias, 1 drivers
+v0000029575976660_0 .net "d7", 0 0, L_0000029575923d80;  alias, 1 drivers
+v0000029575975d00_0 .net "x", 0 0, o000002957592b158;  alias, 0 drivers
+v00000295759762a0_0 .net "xb", 0 0, L_00000295758f3110;  1 drivers
+v00000295759758a0_0 .net "y", 0 0, o000002957592b1b8;  alias, 0 drivers
+v0000029575975da0_0 .net "yb", 0 0, L_00000295758f3310;  1 drivers
+v0000029575975ee0_0 .net "z", 0 0, o000002957592b218;  alias, 0 drivers
+v0000029575975f80_0 .net "zb", 0 0, L_00000295758f2c30;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "1_b.v";
+    "./1_a.v";
